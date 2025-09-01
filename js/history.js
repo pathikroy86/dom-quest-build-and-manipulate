@@ -1,6 +1,8 @@
 document.getElementById('donation-btn').addEventListener('click', function (event) {
     event.preventDefault();
     showSectionById('donation-container');
+    this.classList.add("bg-[#B4F461]");
+    document.getElementById('history-btn').classList.remove("bg-[#B4F461]");
 })
 
 function historyGeneratorNoakhali() {

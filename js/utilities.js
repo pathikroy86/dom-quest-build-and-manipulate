@@ -1,3 +1,8 @@
+document.getElementById('blog-btn').addEventListener('click', function (event) {
+    event.preventDefault();
+    window.location.href = "blog.html"
+})
+
 function getInputValue(id) {
     const input = document.getElementById(id).value;
     const inputValue = parseFloat(input);

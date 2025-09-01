@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <nav class="sticky top-0 z-50 mb-10">
+        <div class="navbar bg-[#F9F7F3] shadow-sm py-5">
+            <div class="navbar-start ps-5">
+                <button id="home-btn" class="btn bg-[#B4F461]">Home</button>
+            </div>
+            <div class="navbar-center">
+                <a class="btn btn-ghost text-xl"><img class="h-4/5" src="assets/logo.png" alt="">Donate Bangladesh</a>
+            </div>
+            <div class="navbar-end pr-5">
+                <div class="badge badge-md"><img src="assets/coin.png" alt=""><span id="donatable-field">50000</span>
+                    BDT</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="w-4/5 mx-auto">
+        <h1 class="text-4xl font-bold p-5">FAQ</h1>
+        <details class="collapse bg-base-100 border-base-300 border">
+            <summary class="collapse-title font-semibold">What is the Document Object Model (DOM)?</summary>
+            <div class="collapse-content text-sm">
+                DOM is a tree like structure, which allows javascript to interact with HTML and also manipulate HTML and
+                CSS within the javascript.
+            </div>
+        </details>
+        <details class="collapse bg-base-100 border-base-300 border">
+            <summary class="collapse-title font-semibold">How do you select an element from the DOM?</summary>
+            <div class="collapse-content text-sm">
+                There are three ways to select an element from the DOM. One is directly through tag name. But this is
+                not a good way to interact, because this select all the element using the selected tagname. Another one
+                is, using the class name of the elements available in the HTML file. The most convenient one is using a
+                element's ID. ID is unique and can't be use in multiple elements. Through an elements ID, I can select a
+                specific element.
+            </div>
+        </details>
+        <details class="collapse bg-base-100 border-base-300 border">
+            <summary class="collapse-title font-semibold">What is event delegation in the context of the DOM, and why is
+                it useful?</summary>
+            <div class="collapse-content text-sm">
+                Event Delegation is the technique, by which an event handler is used in the parent element and it can
+                catch up all the child elements under that parent. It is useful, by using in the parent we don't need to
+                repeat event handler.
+            </div>
+        </details>
+        <details class="collapse bg-base-100 border-base-300 border">
+            <summary class="collapse-title font-semibold">How do you manipulate an element's attributes and styles using
+                the DOM?</summary>
+            <div class="collapse-content text-sm">
+                I can manipulate an element's attribute by using set or remove attribute. In the DOM I also can
+                manipulate styles of the HTML bt using .style and then which style I want to manipulate.
+            </div>
+        </details>
+    </main>
+</body>
+<script>
+    document.getElementById('home-btn').addEventListener('click', function (event) {
+        event.preventDefault();
+        window.location.href = "\index.html";
+    })
+</script>
+
+</html>

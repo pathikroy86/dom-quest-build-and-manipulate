@@ -1,6 +1,8 @@
 document.getElementById('history-btn').addEventListener('click', function (event) {
     event.preventDefault();
     showSectionById('history-container');
+    this.classList.add("bg-[#B4F461]");
+    document.getElementById('donation-btn').classList.remove("bg-[#B4F461]");
 })
 
 document.getElementById('noakhali-donate-btn').addEventListener('click', function () {
