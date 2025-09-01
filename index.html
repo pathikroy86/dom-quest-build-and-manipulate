@@ -19,26 +19,21 @@
             <div class="navbar-center">
                 <a class="btn btn-ghost text-xl"><img class="h-4/5" src="assets/logo.png" alt="">Donate Bangladesh</a>
             </div>
-            <div class="navbar-end">
-                <button class="btn btn-ghost btn-circle">
-
-                </button>
-                <button class="btn btn-ghost btn-circle pr-20">
-                    <div class="badge badge-md"><img src="assets/coin.png" alt=""><span>50000</span> BDT</div>
-                </button>
+            <div class="navbar-end pr-5">
+                <div class="badge badge-md"><img src="assets/coin.png" alt=""><span id="donatable-field">50000</span>
+                    BDT</div>
             </div>
         </div>
         <!--Donation and history button-->
         <div class="flex justify-center space-x-5 py-8 bg-white bg-cover">
-            <button class="btn bg-[#B4F461] btn-lg">Donation</button>
-            <button class="btn btn-lg">History</button>
+            <button id="donation-btn" class="btn bg-[#B4F461] btn-lg">Donation</button>
+            <button id="history-btn" class="btn btn-lg">History</button>
         </div>
         <!--Donation and history button end-->
-
     </nav>
     <!--Navbar End-->
 
-    <main class="w-11/12 mx-auto">
+    <main id="donation-container" class="w-11/12 mx-auto">
         <!--Donation for flood noakhali section start-->
         <div class="card card-side bg-base-100 shadow-sm p-3 mb-10">
             <figure>
@@ -46,17 +41,37 @@
             </figure>
             <div class="card-body w-1/2">
                 <div class="badge badge-md bg-[#1111110D] font-bold"><img class="h-5/6" src="assets/coin.png"
-                        alt=""><span>0</span> BDT</div>
-                <h2 class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
+                        alt=""><span id="total-noakhali-donation">0</span> BDT</div>
+                <h2 id="noakhali-donation-title" class="card-title">Donate for Flood at Noakhali, Bangladesh</h2>
                 <p>The recent floods in Noakhali have caused significant damage to homes infrastructure. Your donation
                     will help provide essential supplies and to those affected by this disaster. Every contribution, big
                     or small, makes difference. Please join us in supporting the relief efforts and making a positive
                     impact on the lives of those in need.</p>
                 <fieldset class="fieldset">
-                    <input type="text" class="input w-full" placeholder="Write Donation Amount" />
+                    <input type="text" id="noakhali-donation-input-field" class="input w-full"
+                        placeholder="Write Donation Amount" />
                 </fieldset>
                 <div>
-                    <button class="btn bg-[#B4F461] w-full">Donate Now</button>
+                    <button id="noakhali-donate-btn" class="btn bg-[#B4F461] w-full"
+                        onclick="historyGeneratorNoakhali()">Donate
+                        Now</button>
+                    <!--Modal start-->
+                    <dialog id="my_modal_1" class="modal">
+                        <div class="modal-box text-center">
+                            <h2 class="text-2xl font-bold mb-4">Congrats!</h2>
+                            <figure><img class="w-1/12" src="assets/coin.png" alt=""></figure>
+                            <p class="py-4">You Have Donated for Humankind</p>
+                            <h3 class="font-bold text-lg">Successfully</h3>
+                            <div class="modal-action flex justify-center">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn">Close
+                                        Confirmation</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
+                    <!--Modal ends-->
                 </div>
             </div>
         </div>
@@ -68,18 +83,20 @@
             </figure>
             <div class="card-body w-1/2">
                 <div class="badge badge-md bg-[#1111110D] font-bold"><img class="h-5/6" src="assets/coin.png"
-                        alt=""><span>600</span> BDT</div>
-                <h2 class="card-title">Donate for Flood Relief in Feni, Bangladesh</h2>
+                        alt=""><span id="total-feni-donation">600</span> BDT</div>
+                <h2 id="feni-donation-title" class="card-title">Donate for Flood Relief in Feni, Bangladesh</h2>
                 <p>The recent floods in Feni have devastated local communities, leading to severe disruption and loss.
                     Your generous donation will help provide immediate aid, including food, clean water, and medical
                     supplies, to those affected by this calamity. Together, we can offer crucial support and help
                     rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real
                     difference. Please consider donating today to assist those in urgent need.</p>
                 <fieldset class="fieldset">
-                    <input type="text" class="input w-full" placeholder="Write Donation Amount" />
+                    <input type="text" id="feni-donation-input-field" class="input w-full"
+                        placeholder="Write Donation Amount" />
                 </fieldset>
                 <div>
-                    <button class="btn bg-[#B4F461] w-full">Donate Now</button>
+                    <button id="feni-donate-btn" class="btn bg-[#B4F461] w-full" onclick="historyGeneratorFeni()">Donate
+                        Now</button>
                 </div>
             </div>
         </div>
@@ -91,8 +108,8 @@
             </figure>
             <div class="card-body w-1/2">
                 <div class="badge badge-md bg-[#1111110D] font-bold"><img class="h-5/6" src="assets/coin.png"
-                        alt=""><span>2400</span> BDT</div>
-                <h2 class="card-title">Aid for Injured in the Quota Movement</h2>
+                        alt=""><span id="total-quota-donation">2400</span> BDT</div>
+                <h2 id="quota-donation-title" class="card-title">Aid for Injured in the Quota Movement</h2>
                 <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many
                     individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary
                     supplies to those affected. By contributing, you help ensure that injured individuals receive the
@@ -100,17 +117,26 @@
                     alleviating their suffering and aiding in their recovery. Please consider making a donation to
                     support these brave individuals in their time of need.</p>
                 <fieldset class="fieldset">
-                    <input type="text" class="input w-full" placeholder="Write Donation Amount" />
+                    <input type="text" id="quota-donation-input-field" class="input w-full"
+                        placeholder="Write Donation Amount" />
                 </fieldset>
                 <div>
-                    <button class="btn bg-[#B4F461] w-full">Donate Now</button>
+                    <button id="quota-donation-btn" class="btn bg-[#B4F461] w-full"
+                        onclick="historyGeneratorQuota()">Donate Now</button>
                 </div>
             </div>
         </div>
         <!--Aid for injured section end-->
     </main>
 
+    <section id="history-container" class="hidden w-4/5 mx-auto">
+        <ul id="history-generate" class="list bg-base-100 rounded-box shadow-md">
+
+        </ul>
+    </section>
+
     <script src="js/utilities.js"></script>
+    <script src="js/history.js"></script>
     <script src="js/donation.js"></script>
 </body>
 
